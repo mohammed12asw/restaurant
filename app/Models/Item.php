@@ -10,17 +10,17 @@ class Item extends Model
 {
     use HasFactory;
 
-    // public function scopeFilter($query, array $filters)
-    // {
-    //     $query->when(
-    //         $filters['search'] ?? false,
-    //         fn ($query, $search) => $query->where(
-    //             fn ($query) => $query->where('name', 'LIKE', '%' . $search . '%')
-    //         )
-    //     )
-    //         ->when(
-    //             $filters['illness'] ?? false,
-    //             fn ($query, $illness) => $query->where('illness', '=', $illness)
-    //         );
-    // }
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when(
+            $filters['search'] ?? false,
+            fn ($query, $search) => $query->where(
+                fn ($query) => $query->where('name', 'LIKE', '%' . $search . '%')
+            )
+        )
+            ->when(
+                $filters['illness'] ?? false,
+                fn ($query, $illness) => $query->where('illness', '=', $illness)
+            );
+    }
 }

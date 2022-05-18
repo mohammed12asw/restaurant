@@ -103,7 +103,7 @@ class HomeController extends Controller
         $user_id = Auth::id();
         $count = cart::where('user_id', $user_id)->count();
 
-        $data = Item::all();
+        $data = Item::filter(request(['search']))->get();
         $illnesses = diet::all();
 
         return view('search', compact('data', 'illnesses', 'count'));
