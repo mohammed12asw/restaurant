@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <table>
+            
+    <tr>
+        <td>fool </td>
+        <td id="q">2</td>
+        <td id="price">2200</td>
+        <td id="total"></td>
+        <script>
+        
+            var quantity=Number( document.getElementById("q").innerText);
+            var price=Number( document.getElementById("price").innerText);
+            var tot=quantity*price;
+            document.getElementById("total").innerText=tot;
+  
+       
+          </script>
+        </tr>
+        <tr>
+            <td>fool </td>
+            <td id="q">55</td>
+            <td id="price">1000</td>
+            <td id="total" onclick="t()"></td>
+            <script>
+        
+                var quantity=Number( document.getElementById("q").innerText);
+                var price=Number( document.getElementById("price").innerText);
+                document.write()
+                var tot=quantity*price;
+                document.getElementById("total").innerText=tot;
+      
+           
+              </script>
+            </tr>
+   </table>
+    
+   <script>
+            function t(){
+    var quantity=Number( document.getElementById("q").innerHTML);
+    var price=Number( document.getElementById("price").innerHTML);
+    var tot=quantity*price;
+    document.getElementById("total").innerHTML=tot;
+            }
+
+  </script>
+</body>
+</html>
